@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import'font-awesome/css/font-awesome.min.css';
+@import "prismjs/plugins/toolbar/prism-toolbar.css";
+@import "prismjs/themes/prism.css";
+@import "prismjs/plugins/toolbar/prism-toolbar.css";
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+      background-image: linear-gradient(to right, rgb(163, 144, 144) , rgb(114, 114, 91));
+
+}

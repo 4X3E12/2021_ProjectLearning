@@ -1,0 +1,213 @@
+<body>
+<div class="helloList" *ngIf=" '' === ''; else elseBlock " >
+
+   <script src="../prism.js"></script>  
+    <div *ngIf="'google' === 'google'; else elseBlock" >
+        
+
+    </div>
+    <ng-template #elseBlock> welcome to site!!! <br> We Back Soon!!  </ng-template>
+  
+    <br><br> 
+  
+      
+    <mat-divider></mat-divider>
+
+   
+<!--<table mat-table [dataSource]="issues" class="mat-elevation-z8">-->
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column 
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Unreal Tutroial's </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} 
+       
+
+    </td>
+  </ng-container>-->
+  <div class="container" >
+  <div class="row" >
+    <button mat-fab [routerLink]="['/create']" 
+          routerLinkActive="router-link-active"  >New Post </button>
+
+    <div class="col-12" >
+        <mat-tab-group class="tabs" >
+
+            <mat-tab label="Blogs"> 
+      
+                <div class=" backCard" *ngFor="let title of issues" >
+                  <br><br>
+                    <mat-card  class=" container example-card"  >
+                      <mat-card-header >
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title class=" text-monospace" >
+                          <h2>  {{title.title}}</h2>
+                        </mat-card-title>
+                        <mat-card-subtitle> 
+                            <mat-chip-list>
+                              <div *ngIf="tagApiActivated; else elsec" > 
+                                <mat-chip  (click)="tagApi(title.responsebile)" color="primary" selected><span class="text-right" >
+                                  {{title.responsebile}}</span>
+                                </mat-chip>
+                              </div>
+                              <ng-template #elsec>
+                                  <mat-chip (click)="fetchIssues()" routerLinkActive="router-link-active"  color="primary" selected><span class="text-right elsec " >
+                                      {{title.responsebile}} <br></span>
+                                    </mat-chip>
+                                    <mat-chip (click)="fetchIssues()" routerLinkActive="router-link-active"  color="primary" selected><span class="text-right elsec " >
+                                        OFF <br></span>
+                                      </mat-chip>
+                              </ng-template>
+                              
+                              </mat-chip-list>
+                        </mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content  class="e2e-inner-html-interpolated  " > 
+                        {{title.severity}}
+                  
+                       <!-- <div class="text-justify" [innerHTML] = title.description  >  
+                       </div> 
+                         -->
+                      
+                                      
+                    
+                      </mat-card-content>
+                      <mat-card-actions>
+                         <!-- <button mat-button color="primary" (click)="editIssues(title._id)">Edit</button>
+                          <button mat-button color="warn" (click)="deleteIssue(title._id)">
+                            <i class="material-icons">
+                              delete
+                              </i>
+                          </button>  -->  
+                       <!-- <button mat-raised-button color="info" (click)="postAvi_id(title._id)">Post Open...</button> -->
+                       <button matTooltip=" Open Post {{title.title}} " style="background-color: bisque;" mat-button  mat-raised-button (click)="openSnackBar(title.title, postAvi_id(title._id))">Post Open</button>
+                      </mat-card-actions>
+                    </mat-card>
+                    <br>
+                    <mat-divider></mat-divider>
+
+                  </div>
+                  <br>
+      
+            </mat-tab>
+            
+            <mat-tab style="color: azure;" label="Blogger"> 
+              <!-- <mat-divider></mat-divider>
+              <span> This is From Blogger </span>
+              <div class=" backCard " *ngFor="let index of [0,1,2,3,4,5,7,8,9,10,11]" >
+                <div *ngIf="bloggerPosts?.items[index]">
+                
+               
+                  Hello World?
+                 {{bloggerPosts?.items[1].author.displayName}}
+                 <br>
+                 {{bloggerPosts?.items[1].content}} 
+                 <mat-card class=" container example-card  ">
+               
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      
+                      <mat-card-title class=" text-monospace" >{{bloggerPosts?.items[index].title }}</mat-card-title>
+                      <mat-card-subtitle>{{bloggerPosts?.items[index].author.displayName}} | 
+                        <span> {{bloggerPosts?.items[index].published}} | {{bloggerPosts?.items[index].id | blog_PostExpend }}
+                        
+                      </span> </mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="#" alt="Author Profile">
+                    <mat-card-content>
+                  
+                     
+                        
+            
+                    </mat-card-content>
+                    <mat-card-actions>
+                        book?.thumbnails && book?.thumbnails[0].url 
+                      <button mat-button  mat-raised-button   mat-button>More...</button>
+                      
+                    </mat-card-actions>
+                  </mat-card>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                </div>
+                </div>-->
+
+            </mat-tab> 
+
+            <mat-tab label="I Am"> 
+              <div class="text-center" style="background-color: burlywood; height: 400px; padding: 40px; " >
+              <h2 class="h2 text-monospace " > Hello From INDIA </h2>  
+              <p style="color: blueviolet;" class=" text-left " >
+                Images Used From : <a  class=" text-truncate " href="https://unsplash.com" > <h3 class="h3" > Unsplash </h3></a>
+              </p>
+              <mat-divider></mat-divider>
+              <footer  >
+                    <p> I'm Not a Great a UI or UX designer so please!!! </p>
+                  <blockquote class="blockquote">
+                      <p class="mb-0 text-monospace  ">CREATIVITY Define you! </p>
+                    <footer class="blockquote-footer">What About Me! <cite title="Source Title">l4</cite></footer>
+                    </blockquote>
+                    <p lass="text-muted" > Copyright © 2021 made by <strong>l4</strong> </p>
+                    <a  class=" text-truncate " href="https://www.instagram.com/_l4kkxvec/" > <h5 class="h3" > Instagram </h5></a>
+              </footer>
+            </div>
+            </mat-tab>
+          
+          </mat-tab-group>
+       
+    </div>
+  </div>
+  </div>
+  <!-- Name Column -->
+ <!-- <ng-container matColumnDef="responsebile">
+    <th mat-header-cell *matHeaderCellDef> Ressponsible </th>
+    <td mat-cell *matCellDef="let element"> {{element.responsebile}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element"></td>
+  </ng-container>-->
+
+  <!-- Weight Column 
+  <ng-container matColumnDef="severity">
+    <th mat-header-cell *matHeaderCellDef> Severity </th>
+    <td mat-cell *matCellDef="let element"> {{element.severity}} </td>
+  </ng-container>-->
+
+  <!-- Symbol Column 
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+<br>
+
+<ng-container matColumnDef="filename">
+  <th mat-header-cell *matHeaderCellDef> Image Status </th>
+  <td mat-cell *matCellDef="let element"> {{element.filename}}  
+    <img width="100px" height="90px" src='{{element.filename}}'>
+    <mat-card class="example-card">
+      <img mat-card-image src="oneImageReturn(element.filename)" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content>
+    </mat-card></td></ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>-->
+
+</div>
+
+<ng-template #elseBlock>
+  <h4> Add More!! Bug's like Features </h4>
+</ng-template>
+
+
+</body>

@@ -1,0 +1,81 @@
+<div>
+  <br>
+<div>
+  <h1>Upload File!!</h1>
+  <form method="POST" enctype="multipart/form-data" action='/uploads' >
+<input type="file" name = "file" (change) = "onFileSelected($event)" >
+<button type="button" (click)="onUpload()" >Upload</button>
+
+</form>
+</div>
+
+  <mat-card id="matCard" >
+    <!-- <section class="mat-typography" >
+      <h3 [class.test] = "test" class ='mm'>New TYpo</h3>
+      <h3 [ngStyle] = "fontSize " class ='mm'>New TYpo</h3>
+    </section> 
+    <mat-divider></mat-divider>
+    <br>
+   <button mat-flat-button (click)="changeColor()">Color</button> 
+    <br>
+    <mat-divider></mat-divider>
+    <br> -->
+
+    <form  [formGroup] = "creatForm" class="create-form" >
+      <mat-form-field class="field-full-width">
+        <input matInput  placeholder="Title" formControlName="title" #title>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Responsiable" formControlName="responsible" #responsible>
+       
+      </mat-form-field>
+      <br>
+      <mat-form-field class="field-full-width">
+       
+            <textarea [innerHTML] = "safeHtml" value="{{html}}" matInput placeholder="Descritption" formControlName="descritption" #descritption></textarea>       
+
+      </mat-form-field>
+     
+     
+
+    
+      <br>
+      <mat-form-field class="field-full-width">
+        <textarea  matInput placeholder="Severity" formControlName="severity" #severity></textarea>
+      </mat-form-field>
+
+      
+        <button mat-flat-button color="green" routerLink="/list" >Back</button>
+        <button mat-flat-button type="submit" (click)="addIssue(title.value, responsible.value, descritption.value, severity.value)" [disabled] ="creatForm.pristine || creatForm.invalid" mat-rasied-button color="blue">ADD</button>
+
+    </form>
+    <div class="e2e-inner-html-interpolated" class="NgxEditor__Wrapper">
+      <ngx-editor-menu  [editor]="editor"> </ngx-editor-menu>
+      <ngx-editor
+        [editor]="editor"
+        [(ngModel)]="html"
+        [editable]="true"
+      ></ngx-editor>
+    </div>
+    <div>
+      {{html}}
+    </div>
+<!--<form method="POST" enctype="multipart/form-data" [formGroup] = "myForm" class="create-form" >
+  
+
+    <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+    <button mat-flat-button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload an Image
+</button>
+</form>-->
+  </mat-card>
+
+</div>
+
+
+  
+   
+ 

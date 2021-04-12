@@ -1,0 +1,43 @@
+@import '../prism.css';
+table{
+    width: 100%;
+}
+
+th{
+    font-size: 18px;
+    
+}
+
+.example-card {
+    max-width: 1000px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  .b{
+    font: bold;
+  }
+.backCard{
+  background-color: #303030; 
+  background-image: url('https://images.unsplash.com/photo-1562875940-d39bfb6ab0a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1372&q=80');
+  
+ 
+}
+
+.backCard :hover {
+  background-color: rgb(100, 112, 112);
+}
+
+
+.elsec{
+  color: cyan;
+}
+
+.tab-side{
+  background-color: azure;
+}
+::ng-deep .tabs{
+  color: wheat;
+}
