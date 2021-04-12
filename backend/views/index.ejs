@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" action='/uploads' >
+            <label>Upload File</label>
+            <input name="file" type="file" >
+
+            <input type="submit" value="Submit">
+
+        </form>
+        <% if (files) { %>
+            <% files.forEach (function (file){  %>
+                <% if (file.isImage){ %>
+        <img src="image/<%=file.filename %>" width="100px" height="90px" alt="here image" >
+        <% }else { %>
+            <%=file.filename %>
+            <% } %>
+            <% }); %>
+        <% }else { %>
+            <p>No Files Found!!</p>
+            <% }%>
+    </body>
+</html>
